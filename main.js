@@ -14,24 +14,30 @@ function validateForm () {
   }else{
 
     //NOMBRE
-    //- nombre entre 3 y 8 caracteres de largo
+    //nombre entre 3 y 8 caracteres de largo
     if (nombre.length < 3 || nombre.length > 8){
       alert ("Ingresar nombre entre 3 y 8 caracteres de largo")
-    }else{
+    }else
       //empezar con mayuscula
-      if (nombre.match("^[A-Z]")){
+      if (nombre.("^[A-Z]")){
         alert("El nombre esta ok")
       }else{
         alert("El nombre debe empezar con mayuscula")
       }
     }
-
+    
     //CONTRASEÑA
-    if (contrasena.match("^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{6,}$")){
+    if (contrasena.test("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$")){
       alert("La contraseña esta ok")
     }else{
-      alert("El password debe tener al menos un numero y una letra y debe ser minimo de largo 6")
+      alert("El password debe tener al menos un numero y una letra y debe ser minimo de largo 6 "+contrasena)
     }
 
-  }
-}
+    //MAIL
+    if (correo.test("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")){
+      alert("El correo esta ok")
+    }else{
+      alert("el correo no tiene un formato correcto")
+    }
+
+ }
